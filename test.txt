@@ -3,4 +3,3 @@ test text on local
 added local
 del test line 4
 5 5 5
-l6 l6 l6
