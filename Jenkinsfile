@@ -4,9 +4,9 @@ pipeline {
         stage('BuildAndTest') {
             agent any
             stages {
-                stage('Build') {
+                stage('build') {
                     steps {
-                        echo 'Do Build'
+                        echo "Building stage for build #${env.BUILD_NUMBER}"
                     }
                 }
                 stage('Test') {
