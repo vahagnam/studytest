@@ -1,7 +1,7 @@
 properties([
         parameters ([
                 choice(name: 'PARAMETER_01', choices: ['ONE', 'TWO'], description: 'Choose an option')
-                booleanParam(name: 'BOOLEAN', defaultValue: true, description: 'Enable this option')
+                //booleanParam(name: 'BOOLEAN', defaultValue: true, description: 'Enable this option')
                 text(name: 'MULTI-LINE-STRING', defaultValue: 'this is a multi-line string parameter example', description: 'Enter some text')
                 string(name: 'STRING-PARAMETER', defaultValue: 'scriptcrunch', description: 'Enter a string', trim: true)
     ])
