@@ -1,21 +1,29 @@
 properties([
-        parameters ([
-                choice(name: 'PARAMETER_01', choices: ['ONE', 'TWO'], description: 'Choose an option')
-                //booleanParam(name: 'BOOLEAN', defaultValue: true, description: 'Enable this option')
-                text(name: 'MULTI-LINE-STRING', defaultValue: 'this is a multi-line string parameter example', description: 'Enter some text')
-                string(name: 'STRING-PARAMETER', defaultValue: 'scriptcrunch', description: 'Enter a string', trim: true)
+    parameters([
+        choice(choices: ['None', 'AWS', 'Azure'], name: 'CLOUD_PLATFORM', description: 'Select the Cloud Platform'),
+        choice(choices: ['dev', 'stag', 'prod'], name: 'environment', description: 'Choose your Environment'),
+        choice(choices: ['start', 'stop'], name: 'INFRA_DEPLOYMENT', description: 'The option start will deploy the infra structure and stop will destroy the whole infra structure'),
+        string(name: 'Game_ID', defaultValue: 'GID', description: 'Enter the Game ID of the Tournament, Used for Manage workspace', trim: true),
+        choice(choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '25', '50', '100', '200'], name: 'vm_count', description: 'The no of vms for the vm scaleset default value is 1')
     ])
 ])
 pipeline {
     agent any
-    
+
     stages {
-        stage('Use Parameters') {
+        stage('Build') {
             steps {
-                echo "Parameter 01: ${params.PARAMETER_01}"
-                echo "Boolean: ${params.BOOLEAN}"
-                echo "Multi-line String: ${params.MULTI-LINE-STRING}"
-                echo "String Parameter: ${params.STRING-PARAMETER}"
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
