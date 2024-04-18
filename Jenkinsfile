@@ -1,10 +1,9 @@
 pipeline {
-    agent any
-    
+    agent { label 'master' }
     stages {
-        stage('Example') {
+        stage('build') {
             steps {
-                sh "echo 'Hello, Jenkins!'"
+                echo "Hello World!"
             }
         }
     }
