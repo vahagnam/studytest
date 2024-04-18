@@ -1,10 +1,12 @@
 pipeline {
     agent any
-    
     stages {
         stage('Example') {
             steps {
-                echo 'Hello, Jenkins!'
+                script {
+                    def output = sh(returnStdout: true, script: 'pwd')
+                    echo "Output: ${output}"
+                }
             }
         }
     }
