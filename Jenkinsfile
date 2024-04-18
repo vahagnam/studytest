@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo 'Hello, Jenkins!'
+                script{
+                    sh"
+                        echo 'Hello, Jenkins!'
+                    "
+                }
             }
         }
     }
