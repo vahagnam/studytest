@@ -1,9 +1,9 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Stage 1') {
+        stage('Example') {
             steps {
-                echo 'Hello world!' 
+                echo "This will be printed to the console"
             }
         }
     }
